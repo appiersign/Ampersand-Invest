@@ -1,3 +1,47 @@
-<p>
-  project-list works!
-</p>
+<header class="container-fluid bg-white">
+  <nav class="navbar navbar-expand-lg navbar-light container-fluid">
+    <a class="navbar-brand" href="#">Ampersand Invest</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item mr-3">
+          <a class="nav-link text-dark" href="#">Login <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn btn-outline-success text-success" href="#">Get Started <span
+            class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<main class="container mt-5">
+  <div class="row">
+    <div *ngFor="let project of projects" class="col-xs-12 col-md-4 mb-3">
+      <div class="card projects">
+        <div class="row pt-3">
+          <div class="col-4 w-100">
+            <img src="{{ project.logo }}" alt="{{ project.name }}" style="object-fit: cover; width: 100%">
+          </div>
+          <div class="col-8">
+            <h5>{{ project.name }}</h5>
+            <div class="font-12"><span><b>Category: </b></span> {{ project.company.category }}</div>
+            <div class="font-12"><span><b>Investment Type: </b></span> {{ project.investment_type }}</div>
+            <div class="font-12"><span><b>Amount Raised: </b></span> {{ project.amount_raised }}</div>
+            <div class="font-12"><span><b>Equity: </b></span> {{ project.equity_offered }}</div>
+            <div class="font-12"><span><b>Investors: </b></span> {{ project.investor_count }}</div>
+            <div class="mb-3"></div>
+            <div class="container-fluid bg-danger text-center">
+              <a href="/" class="btn btn-default text-white font-12 my-1">see more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
