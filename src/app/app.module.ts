@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { ProjectListComponent } from './project-list/project-list.component';
 import {ProjectService} from './project.service';
 import {HttpClientModule} from '@angular/common/http';
+import { ProjectDetailsComponent } from './project-details/project-details.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComponents,
-    ProjectListComponent
+    ProjectListComponent,
+    ProjectDetailsComponent
   ],
   imports: [
     BrowserModule,
