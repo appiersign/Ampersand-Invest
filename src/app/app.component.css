@@ -1,0 +1,18 @@
+main {
+  /*height: 100vh;*/
+}
+
+aside {
+  font-family: 'Comfortaa', cursive;
+  height: 100vh;
+}
+
+aside > ul {
+  padding-top: 20px;
+  padding-left: 0;
+}
+
+aside > ul li {
+  list-style: none;
+  padding-bottom: 10px;
+}
