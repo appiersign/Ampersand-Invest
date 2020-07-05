@@ -1,3 +1,85 @@
-<p>
-  project-details works!
-</p>
+<header class="container-fluid bg-white">
+  <nav class="navbar navbar-expand-lg navbar-light container-fluid">
+    <a class="navbar-brand" href="#">Ampersand Invest</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item mr-3">
+          <a class="nav-link text-dark" href="#">Login <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn btn-outline-success text-success" href="#">Get Started <span
+            class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main class="container mt-5">
+  <div class="row">
+    <div class="col-12 mb-3">
+      <div class="card projects">
+        <div class="row pt-3">
+          <div id="image-box" class="col-4 w-100">
+            <img src="{{ project.logo }}" alt="{{ project.name }}" style="object-fit: cover; width: 100%">
+          </div>
+          <div class="col-8">
+            <div class="row">
+              <div class="contain-fluid d-flex justify-content-between">
+                <h1 class="mb-3 mr-2">{{ project.name }}</h1>
+                <span class="badge" [ngClass]="statusClass(project.is_approved)" style="height: 20px">{{ getStatus() }}</span>
+              </div>
+            </div>
+
+            <div class="font-12 mb-3"><span><b>Summary: </b></span> {{ project.summary }}</div>
+            <div class="font-12 mb-3"><span><b>Problem Statement: </b></span> {{ project.problem_and_solution }}</div>
+            <div class="font-12 mb-3"><span><b>Solution: </b></span> {{ project.product_and_services }}</div>
+            <div class="font-12 mb-3"><span><b>Description: </b></span> {{ project.company.description }}</div>
+            <div class="font-12 mb-3"><span><b>Incorporated: </b></span> {{ project.company.date_of_incorporation | date }}</div>
+            <div class="font-12 mb-3"><span><b>Market: </b></span> {{ project.market }}</div>
+            <div class="font-12 mb-3"><span><b>Strategy: </b></span> {{ project.market_strategy }}</div>
+            <div class="font-12 mb-3"><span><b>Competitive Strategy: </b></span> {{ project.competition_strategy }}</div>
+            <div class="font-12 mb-3"><span><b>Idea Introduction: </b></span> {{ project.idea_introduction }}</div>
+            <div class="font-12 mb-3"><span><b>Intended Impact: </b></span> {{ project.intended_impact }}</div>
+            <div class="font-12 mb-3"><span><b>Monetization Strategy: </b></span> {{ project.monetisation_strategy }}</div>
+            <div class="font-12 mb-3"><span><b>Substantial Accomplishment: </b></span> {{ project.substantial_accomplishment }}</div>
+            <div class="font-12 mb-3"><span><b>Repayment Cycle: </b></span> {{ project.repayment_cycle }}</div>
+            <div class="font-12 mb-3"><span><b>Use of Proceeds: </b></span> {{ project.use_of_proceeds }}</div>
+            <div class="container pl-0 mb-3">
+              <table class="table-bordered table-striped col-12">
+                <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>Investment Type</th>
+                  <th>Amount Raised</th>
+                  <th>Equity</th>
+                  <th>Investors</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>{{ project.company.category }}</td>
+                  <td>{{ project.investment_type | titlecase }}</td>
+                  <td>{{ project.amount_raised | currency:'GHS' }}</td>
+                  <td>{{ project.equity_offered }}</td>
+                  <td>{{ project.investor_count }}</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="mb-3"></div>
+            <div class="col-3 bg-danger text-center">
+              <a routerLink="/projects" class="btn btn-default text-white font-12 my-1"><< projects</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
