@@ -37,7 +37,7 @@
             <div class="font-12"><span><b>Investors: </b></span> {{ project.investor_count }}</div>
             <div class="mb-3"></div>
             <div class="container-fluid bg-danger text-center">
-              <a href="/" class="btn btn-default text-white font-12 my-1">see more</a>
+              <a routerLink="{{'/projects/' + project.id}}" class="btn btn-default text-white font-12 my-1">see more</a>
             </div>
           </div>
         </div>
