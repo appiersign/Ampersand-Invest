@@ -10,6 +10,7 @@ import { ProjectDetailsComponent } from './project-details/project-details.compo
 import {AuthService} from './auth.service';
 import {FormsModule} from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
+import {AuthGuard} from './auth.guard';
 
 
 @NgModule({
@@ -26,7 +27,7 @@ import { HeaderComponent } from './header/header.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [ProjectService, AuthService],
+  providers: [ProjectService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
