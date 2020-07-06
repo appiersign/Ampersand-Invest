@@ -1,0 +1,19 @@
+* {
+  font-family: 'Comfortaa', cursive;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+.font-12 {
+  font-size: 12px;
+}
+
+table {
+  font-size: 12px;
+}
+
+#image-box {
+  height: 379px;
+}

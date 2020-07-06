@@ -3,18 +3,31 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { ProjectListComponent } from './project-list/project-list.component';
+import {ProjectService} from './project.service';
+import {HttpClientModule} from '@angular/common/http';
+import { ProjectDetailsComponent } from './project-details/project-details.component';
+import {AuthService} from './auth.service';
+import {FormsModule} from '@angular/forms';
+import { HeaderComponent } from './header/header.component';
+import {AuthGuard} from './auth.guard';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponents
+    routingComponents,
+    ProjectListComponent,
+    ProjectDetailsComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [ProjectService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
