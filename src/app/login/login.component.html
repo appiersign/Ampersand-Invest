@@ -5,22 +5,29 @@
       <div class="card">
         <div class="card-header"><h1>Login</h1></div>
         <div class="card-body">
-          <form method="POST" (submit)="handleLogin()" action="">
+          <form #loginForm="ngForm" (submit)="handleLogin()">
             <div class="form-group row">
-              <label for="name" class="col-md-4 col-form-label text-md-right">Email:</label>
+              <label for="email" class="col-md-4 col-form-label text-md-right">Email:</label>
               <div class="col-md-6">
-                <input id="name" type="email" class="form-control" name="email" [(ngModel)]="email" placeholder="you@email.com" value="" required autofocus>
+                <input id="email" type="email" #emailValidity="ngModel" class="form-control"
+                       [class.is-invalid]="emailValidity.invalid && emailValidity.touched" name="email"
+                       [class.is-valid]="emailValidity.valid && emailValidity.touched"
+                       [(ngModel)]="email" placeholder="you@email.com" value="" required autofocus>
+                <small class="text-danger" *ngIf="emailValidity.hasError('required') && emailValidity.touched">the email field is required</small>
               </div>
             </div>
             <div class="form-group row">
               <label for="amount" class="col-md-4 col-form-label text-md-right">Password:</label>
               <div class="col-md-6">
-                <input id="amount" type="password" class="form-control " name="password" [(ngModel)]="password" placeholder="******" value="" required>
+                <input id="amount" #passwordValidity="ngModel" type="password" class="form-control " name="password" [(ngModel)]="password"
+                       placeholder="******" value="" minlength="3" required>
+                <small class="text-danger" *ngIf="passwordValidity.hasError('required') && passwordValidity.touched">the password field is required</small>
+                <small class="text-danger" *ngIf="passwordValidity.hasError('minlength') && passwordValidity.touched">must be at least 3 characters</small>
               </div>
             </div>
             <div class="form-group row mb-0">
               <div class="col-md-8 offset-md-4">
-                <button type="submit" class="btn btn-primary">
+                <button type="submit" class="btn btn-primary" [disabled]="loginForm.form.invalid">
                   login
                 </button>
               </div>
