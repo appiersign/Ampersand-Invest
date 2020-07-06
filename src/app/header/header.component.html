@@ -10,10 +10,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item mr-3">
-          <a class="nav-link text-dark" href="#">Howdy, {{ userName }} <span class="sr-only">(current)</span></a>
+          <a class="nav-link text-dark" href="#">Yo! {{ userName }} <span class="sr-only">(current)</span></a>
         </li>
         <li class="navbar-nav ml-auto">
-          <a class="nav-link text-dark" routerLink="logout"><i class="fas fa-power-off"></i></a>
+          <a class="nav-link text-white btn btn-danger" routerLink="/logout" (click)="logOut()"><i class="fas fa-power-off"></i></a>
         </li>
       </ul>
     </div>
