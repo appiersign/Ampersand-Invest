@@ -7,6 +7,7 @@ import { ProjectListComponent } from './project-list/project-list.component';
 import {ProjectService} from './project.service';
 import {HttpClientModule} from '@angular/common/http';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
+import {AuthService} from './auth.service';
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import { ProjectDetailsComponent } from './project-details/project-details.compo
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [ProjectService],
+  providers: [ProjectService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
