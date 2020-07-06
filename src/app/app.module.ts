@@ -8,6 +8,8 @@ import {ProjectService} from './project.service';
 import {HttpClientModule} from '@angular/common/http';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
 import {AuthService} from './auth.service';
+import {FormsModule} from '@angular/forms';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -15,12 +17,14 @@ import {AuthService} from './auth.service';
     AppComponent,
     routingComponents,
     ProjectListComponent,
-    ProjectDetailsComponent
+    ProjectDetailsComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [ProjectService, AuthService],
   bootstrap: [AppComponent]
