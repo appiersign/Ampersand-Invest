@@ -1,6 +1,12 @@
-# Randi
+# Ampersand Invest
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
+![preview](ampersand-invest.png)
+
+Ampersand Invest is a web app designed to help people easily exchange contacts during
+tech events. It has the following features:
+1. Investors can log into the app.
+2. Investors can view a list of projects.
+3. Investors can view the details of a project
 
 # Using Docker
 
